@@ -175,7 +175,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-10-16 17:44:38 / Modified: 18:31:27" itemprop="dateCreated datePublished" datetime="2021-10-16T17:44:38+08:00">2021-10-16</time>
+              <time title="Created: 2021-10-16 17:44:38 / Modified: 18:56:59" itemprop="dateCreated datePublished" datetime="2021-10-16T17:44:38+08:00">2021-10-16</time>
             </span>
 
           
@@ -189,8 +189,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>After reading through probably more than 100 papers regarding the game design and PX research, I finally determined the potential research direction under GUR ┭┮﹏┭┮ . Sharing the research proposal here as pure image, you can get the original PDF file with good cross-referencing from <a target="_blank" rel="noopener" href="https://markdown.com.cn/" title="RP from Junyue Liu">here</a>.</p>
-<p><img src="/images/RP/Research_Proposal_final_v1_00.jpg" alt="00"><br><img src="/images/RP/Research_Proposal_final_v1_01.jpg" alt="00"><br><img src="/images/RP/Research_Proposal_final_v1_02.jpg" alt="00"><br><img src="/images/RP/Research_Proposal_final_v1_03.jpg" alt="00"><br><img src="/images/RP/Research_Proposal_final_v1_04.jpg" alt="00"><br><img src="/images/RP/Research_Proposal_final_v1_05.jpg" alt="00"><br><img src="/images/RP/Research_Proposal_final_v1_06.jpg" alt="00"><br><img src="/images/RP/Research_Proposal_final_v1_07.jpg" alt="00"><br><img src="/images/RP/Research_Proposal_final_v1_08.jpg" alt="00"><br><img src="/images/RP/Research_Proposal_final_v1_09.jpg" alt="00"><br><img src="/images/RP/Research_Proposal_final_v1_10.jpg" alt="00"><br><img src="/images/RP/Research_Proposal_final_v1_11.jpg" alt="00"><br><img src="/images/RP/Research_Proposal_final_v1_12.jpg" alt="00"></p>
+          <p>After reading through probably more than 100 papers regarding the game design and PX research, I finally determined the potential research direction under GUR ┭┮﹏┭┮ . Sharing the research proposal here, you can get the original PDF file with good cross-referencing from <a target="_blank" rel="noopener" href="https://markdown.com.cn/" title="RP from Junyue Liu">here</a>.</p>
+<div class="pdfobject-container" data-target="/download_able/Research_Proposal.pdf" data-height="500px"></div>
 
       
     </div>
@@ -339,6 +339,8 @@
 <script src="/js/next-boot.js"></script>
 
 
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
 
 
   
@@ -353,6 +355,26 @@
 
 
 
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
 
 
 
