@@ -173,7 +173,7 @@
       
       <div class="post-body">
           <p>I’m Junyue Liu from Fujian, China, you can call me Roger if you want. I received my bachelor’s degree in Computer Science and Technology from University of Science and Technology of China in 2019. After graduation, I joined Nvidia Shanghai as a performance engineer at the Geforce gaming department where I was responsible for game graphics optimization scheme design and leading small-scaled infrastructure tool development. With more than 2 years’ work in the game industry, my enthusiasm towards the game deign and research itself has grown stronger and stronger with the continuing deep exposure to various indie and AAA games. The uneven design in narrativity and game experience I’ve seen from the numerous game product has aroused my keen interest in the research of gaming UX design and player demographic. So I am now seeking for opportunities of higher education in the field of game design and player experience research to switch my role towards professional game designer.</p>
-<p>Welcome to contact me at <a href="mailto:&#x6c;&#106;&#x79;&#48;&#48;&#x31;&#x35;&#x40;&#109;&#97;&#105;&#x6c;&#46;&#117;&#115;&#116;&#99;&#x2e;&#101;&#100;&#x75;&#46;&#x63;&#110;">&#x6c;&#106;&#x79;&#48;&#48;&#x31;&#x35;&#x40;&#109;&#97;&#105;&#x6c;&#46;&#117;&#115;&#116;&#99;&#x2e;&#101;&#100;&#x75;&#46;&#x63;&#110;</a>!</p>
+<p>Welcome to contact me at <a href="mailto:&#108;&#106;&#x79;&#48;&#x30;&#49;&#x35;&#64;&#109;&#x61;&#105;&#108;&#x2e;&#x75;&#x73;&#x74;&#99;&#46;&#101;&#x64;&#x75;&#46;&#x63;&#110;">&#108;&#106;&#x79;&#48;&#x30;&#49;&#x35;&#64;&#109;&#x61;&#105;&#108;&#x2e;&#x75;&#x73;&#x74;&#99;&#46;&#101;&#x64;&#x75;&#46;&#x63;&#110;</a>!</p>
 
       </div>
       
@@ -303,8 +303,8 @@
   </div>
 
   
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -317,65 +317,6 @@
 
 
 <script src="/js/next-boot.js"></script>
-
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
 
 
   <script defer src="/lib/three/three.min.js"></script>
@@ -394,7 +335,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 document.querySelectorAll('.pdfobject-container').forEach(element => {
   let url = element.dataset.target;
   let pdfOpenParams = {
@@ -418,11 +359,9 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
 
 
 
-    <div id="pjax">
   
 
   
 
-    </div>
 </body>
 </html>
