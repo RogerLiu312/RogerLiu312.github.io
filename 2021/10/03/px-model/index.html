@@ -22,17 +22,24 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="( ↑↑↑ This is my cat not me ↑↑↑ ) Performance Engineer @ NVIDIA Shanghai, B.Eng.CST from USTC">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Roger&#39;s Gaming Cabin">
-<meta property="og:url" content="http://example.com/archives/2021/10/index.html">
+  <meta name="description" content="Keep some notes for understanding the conceptual models built by previous researchers towords game experience. Experiential Cycle of PX The experiential cycle describes the UX process between a gamer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Conceptual Models for Game Experience">
+<meta property="og:url" content="http://example.com/2021/10/03/px-model/index.html">
 <meta property="og:site_name" content="Roger&#39;s Gaming Cabin">
-<meta property="og:description" content="( ↑↑↑ This is my cat not me ↑↑↑ ) Performance Engineer @ NVIDIA Shanghai, B.Eng.CST from USTC">
+<meta property="og:description" content="Keep some notes for understanding the conceptual models built by previous researchers towords game experience. Experiential Cycle of PX The experiential cycle describes the UX process between a gamer">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/ex_cycle.png">
+<meta property="og:image" content="http://example.com/images/piff.png">
+<meta property="og:image" content="http://example.com/images/cege.png">
+<meta property="og:image" content="http://example.com/images/sci.png">
+<meta property="article:published_time" content="2021-10-03T07:13:22.000Z">
+<meta property="article:modified_time" content="2021-10-17T07:52:34.861Z">
 <meta property="article:author" content="Junyue Liu">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/ex_cycle.png">
 
-<link rel="canonical" href="http://example.com/archives/2021/10/">
+<link rel="canonical" href="http://example.com/2021/10/03/px-model/">
 
 
 <script id="page-configurations">
@@ -40,12 +47,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Archive | Roger's Gaming Cabin</title>
+  <title>The Conceptual Models for Game Experience | Roger's Gaming Cabin</title>
   
 
 
@@ -144,90 +151,94 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 6 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/03/px-model/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Junyue Liu">
+      <meta itemprop="description" content="( ↑↑↑ This is my cat not me ↑↑↑ ) Performance Engineer @ NVIDIA Shanghai, B.Eng.CST from USTC">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Roger's Gaming Cabin">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          The Conceptual Models for Game Experience
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-10-03 15:13:22" itemprop="dateCreated datePublished" datetime="2021-10-03T15:13:22+08:00">2021-10-03</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <p>Keep some notes for understanding the conceptual models built by previous researchers towords game experience.</p>
+<h2 id="Experiential-Cycle-of-PX"><a href="#Experiential-Cycle-of-PX" class="headerlink" title="Experiential Cycle of PX"></a>Experiential Cycle of PX</h2><p> The experiential cycle describes the UX process between a gamer and a game, the congnitive cycle and aspects relate to the PX.<br><img src="/images/ex_cycle.png" alt="Experiential cycle" title="Experiential cycle of PX"></p>
+<h2 id="PIFF2-model"><a href="#PIFF2-model" class="headerlink" title="PIFF2 model"></a>PIFF2 model</h2><p>This model provides an integrated single framework. Although it is based on the wider concepts of presence, involvement, and flow, PIFF2 aims at understanding the subcomponents of “being there” and “optimal experience”, for example, when playing games.Theoretically PIFF2 is founded on previous studies conducted in the field of game research, while it takes into consideration the way the game content, that is, fundamental game components (i.e., the mechanics, the narrative, and the interface) orient the basic psychological base. Methodologically it is based on a large multivariate data set that is psychometrically analyzed in order to establish a reliable and valid set of subcomponents. These analyses have provided 15 subcomponents for analyzing the UX in games. These subcomponents disclose the content, quality, meaning, value, intensity, and extensity of the UX.<br><img src="/images/piff.png" alt="PIFF model" title="PIFF model"></p>
+<h2 id="CEGE-Model"><a href="#CEGE-Model" class="headerlink" title="CEGE Model"></a>CEGE Model</h2><p>The theory can be summarised in the following three points:</p>
+<ol>
+<li>A positive experience (enjoyment) while playing games is achieved by the player’s perception of the video-game and the interaction with it. These are the Core Elements of the Gaming Experience: Video-game and Puppetry.</li>
+<li>Puppetry, the player’s interaction with the game is formed by the player’s sense<br>of control and ownership. Control produces ownership, which in turns produces<br>enjoyment. Ownership is also produced by Facilitators to compensate the sense<br>of control.</li>
+<li>The player’s perception of the video-game is formed by the environment and the<br>game-play, which also produces enjoyment.</li>
+</ol>
+<p><img src="/images/cege.png" alt="CEGE" title="CEGE model"></p>
+<h2 id="SCI-Model"><a href="#SCI-Model" class="headerlink" title="SCI Model"></a>SCI Model</h2><ol>
+<li>The first dimension of a gameplay experience that we distinguish is the sensory immersion<br>related to the audiovisual execution of games. This is something that even those with less experience with games – like the parents of the children that were interviewed – can recognize:<br>digital games have evolved into audiovisually impressive, three-dimensional and stereophonic worlds that surround their players in a very comprehensive manner. Large screens close to<br>player’s face and powerful sounds easily overpower the sensory information coming from the<br>real world, and the player becomes entirely focused on the game world and its stimuli.</li>
+<li>Another form of immersion that is particularly central for games, as they are fundamentally<br>based on interaction, is challenge-based immersion. This is the feeling of immersion that is at its most powerful when one is able to achieve a satisfying balance of challenges and abilities.Challenges can be related to motor skills or mental skills such as strategic thinking or logical<br>problem solving, but they usually involve both to some degree.</li>
+<li>In several contemporary games also the worlds, characters and story elements have become very<br>central, even if the game would not be classifiable as an actual role-playing game. We call this<br>dimension of game experience in which one becomes absorbed with the stories and the world, or<br>begins to feel for or identify with a game character, imaginative immersion. This is the area in which the game offers the player a chance to use her imagination, empathise with the characters,<br>or just enjoy the fantasy of the game.</li>
+</ol>
+<p><img src="/images/sci.png" alt="SCI" title="SCI model"></p>
+<h2 id="MDA-Model"><a href="#MDA-Model" class="headerlink" title="MDA Model"></a>MDA Model</h2>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-10-16T17:44:38+08:00"
-              content="2021-10-16">
-          10-16
-        </time>
-      </div>
+      <footer class="post-footer">
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/10/16/research-proposal/" itemprop="url">
-            <span itemprop="name">A Research Proposal towards Games User Research</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-10-04T10:27:26+08:00"
-              content="2021-10-04">
-          10-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/10/04/px-methods/" itemprop="url">
-            <span itemprop="name">Mainstream Methods Used for PX Evaluation</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-10-03T15:13:22+08:00"
-              content="2021-10-03">
-          10-03
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/10/03/px-model/" itemprop="url">
-            <span itemprop="name">The Conceptual Models for Game Experience</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        
 
 
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/26/ielts/" rel="prev" title="Something about IELTS">
+      <i class="fa fa-chevron-left"></i> Something about IELTS
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/10/04/px-methods/" rel="next" title="Mainstream Methods Used for PX Evaluation">
+      Mainstream Methods Used for PX Evaluation <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-  </div>
+      </footer>
+    
+  </article>
   
   
-  
-
   
 
 
@@ -280,6 +291,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiential-Cycle-of-PX"><span class="nav-number">1.</span> <span class="nav-text">Experiential Cycle of PX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PIFF2-model"><span class="nav-number">2.</span> <span class="nav-text">PIFF2 model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CEGE-Model"><span class="nav-number">3.</span> <span class="nav-text">CEGE Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SCI-Model"><span class="nav-number">4.</span> <span class="nav-text">SCI Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MDA-Model"><span class="nav-number">5.</span> <span class="nav-text">MDA Model</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
