@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/app_touch_my_icon_240.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/my_logo_32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/my_logo_16.png">
+  <link rel="mask-icon" href="/images/my_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-radar.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="This is a game map design implemented with Unreal Engine 5, the original idea of the scenario is to construct a cold glacier landscape, but during the actual design and implement process, it was kind">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oasis In Glacier - An Unreal Map Design">
+<meta property="og:url" content="http://example.com/2021/11/05/oasis/index.html">
+<meta property="og:site_name" content="Roger&#39;s Gaming Cabin">
+<meta property="og:description" content="This is a game map design implemented with Unreal Engine 5, the original idea of the scenario is to construct a cold glacier landscape, but during the actual design and implement process, it was kind">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/small/i5.png">
+<meta property="og:image" content="http://example.com/images/small/i2.png">
+<meta property="og:image" content="http://example.com/images/small/i3.png">
+<meta property="og:image" content="http://example.com/images/small/i4.png">
+<meta property="og:image" content="http://example.com/images/small/i1.png">
+<meta property="og:image" content="http://example.com/images/small/i6.png">
+<meta property="og:image" content="http://example.com/images/small/i7.png">
+<meta property="og:image" content="http://example.com/images/small/i8.png">
+<meta property="og:image" content="http://example.com/images/small/i9.png">
+<meta property="og:image" content="http://example.com/images/small/i10.png">
+<meta property="og:image" content="http://example.com/images/small/i11.png">
+<meta property="og:image" content="http://example.com/images/small/i12.png">
+<meta property="og:image" content="http://example.com/images/small/i13.png">
+<meta property="og:image" content="http://example.com/images/small/i14.png">
+<meta property="og:image" content="http://example.com/images/small/i15.png">
+<meta property="og:image" content="http://example.com/images/small/i16.png">
+<meta property="og:image" content="http://example.com/images/small/i17.png">
+<meta property="og:image" content="http://example.com/images/small/i18.png">
+<meta property="og:image" content="http://example.com/images/small/i19.png">
+<meta property="og:image" content="http://example.com/images/small/i20.png">
+<meta property="article:published_time" content="2021-11-05T05:51:00.000Z">
+<meta property="article:modified_time" content="2021-11-05T20:04:13.121Z">
+<meta property="article:author" content="Junyue Liu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/small/i5.png">
+
+<link rel="canonical" href="http://example.com/2021/11/05/oasis/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Oasis In Glacier - An Unreal Map Design | Roger's Gaming Cabin</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Roger's Gaming Cabin</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Gaming Is More Than Playing</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/05/oasis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Junyue Liu">
+      <meta itemprop="description" content="( ↑↑↑ This is my cat not me ↑↑↑ ) Performance Engineer @ NVIDIA Shanghai, B.Eng.CST from USTC">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Roger's Gaming Cabin">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Oasis In Glacier - An Unreal Map Design
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-05 13:51:00" itemprop="dateCreated datePublished" datetime="2021-11-05T13:51:00+08:00">2021-11-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>This is a game map design implemented with Unreal Engine 5, the original idea of the scenario is to construct a cold glacier landscape, but during the actual design and implement process, it was kind of boring to only see ice, snow and rocks. So the theme changed to a switchback design, lead the player to discover a little oasis in the freezing ice land. The ideas of designing this map includes below:</p>
+<ul>
+<li>The terrain of the map is a bottom-up, narrow-to-wide design. The start point of the map is a corner near a snow cliff, then the path go up along the valley, passing through a very narrow crack between 2 ice cliff, then arrives at the final oasis area. The base terrain is also built with real world height map data from Iceland.</li>
+<li>To make the oasis more believable, a natural hot spring is created to give the heat that the plants need, though in the real world usually the sulfur in hot spring will kill the plants, but it’s nice to keep it fantasy anyway.</li>
+<li>The foliage is deliberately designed as multiple colorful flowers and fresh green grass, along with a giant tree, this makes the oasis more vivifying and forms a sharper contrast with the white and gray of the glacier.</li>
+<li>The sky atmosphere is set to a light blue and clear style, and the sunlight is set to forenoon to give the whole scenario a bright and pure feeling with a few colorful shadows.</li>
+</ul>
+<p>See the walk through video below, if the widget doesn’t load, check it <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1p34y1Z7My/">here</a>:</p>
+<iframe src="//player.bilibili.com/player.html?aid=806576696&bvid=BV1p34y1Z7My&cid=437066060&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<h2 id="Some-more-screenshots-lol"><a href="#Some-more-screenshots-lol" class="headerlink" title="Some more screenshots lol !"></a>Some more screenshots lol !</h2><p><img src="/images/small/i5.png" alt="1" title="Oasis"><br><img src="/images/small/i2.png" alt="1" title="Oasis"><br><img src="/images/small/i3.png" alt="1" title="Oasis"><br><img src="/images/small/i4.png" alt="1" title="Oasis"><br><img src="/images/small/i1.png" alt="1" title="Oasis"><br><img src="/images/small/i6.png" alt="1" title="Oasis"><br><img src="/images/small/i7.png" alt="1" title="Oasis"><br><img src="/images/small/i8.png" alt="1" title="Oasis"><br><img src="/images/small/i9.png" alt="1" title="Oasis"><br><img src="/images/small/i10.png" alt="1" title="Oasis"><br><img src="/images/small/i11.png" alt="1" title="Oasis"><br><img src="/images/small/i12.png" alt="1" title="Oasis"><br><img src="/images/small/i13.png" alt="1" title="Oasis"><br><img src="/images/small/i14.png" alt="1" title="Oasis"><br><img src="/images/small/i15.png" alt="1" title="Oasis"><br><img src="/images/small/i16.png" alt="1" title="Oasis"><br><img src="/images/small/i17.png" alt="1" title="Oasis"><br><img src="/images/small/i18.png" alt="1" title="Oasis"><br><img src="/images/small/i19.png" alt="1" title="Oasis"><br><img src="/images/small/i20.png" alt="1" title="Oasis"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/02/level/" rel="prev" title="Starfish Island - An Unreal Map Design">
+      <i class="fa fa-chevron-left"></i> Starfish Island - An Unreal Map Design
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Some-more-screenshots-lol"><span class="nav-number">1.</span> <span class="nav-text">Some more screenshots lol !</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Junyue Liu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Junyue Liu</p>
+  <div class="site-description" itemprop="description">( ↑↑↑ This is my cat not me ↑↑↑ ) Performance Engineer @ NVIDIA Shanghai, B.Eng.CST from USTC</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:ljy0015@mail.ustc.edu.com" title="E-Mail → mailto:ljy0015@mail.ustc.edu.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Junyue Liu</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+
+</body>
+</html>
