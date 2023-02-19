@@ -160,6 +160,106 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/17/action/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar_2.jpg">
+      <meta itemprop="name" content="Junyue Liu">
+      <meta itemprop="description" content="Former Technical Designer @ Perfect World Beijing, Former Performance Engineer @ NVIDIA Shanghai, Msc Design & Digital Media from Uni. of Edinburgh, B.Eng.CST from USTC">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Roger's Gaming Cabin">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/17/action/" class="post-title-link" itemprop="url">A "Souls-Like" Hardcore Game Action and AI System Demo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-11-17 20:53:50" itemprop="dateCreated datePublished" datetime="2021-11-17T20:53:50+00:00">2021-11-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Demo-and-Prototype/" itemprop="url" rel="index"><span itemprop="name">Demo and Prototype</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Video Demo first, if below video widgets can’t load, please check original video on <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1fU4y1M7hs/">BiliBili</a> or <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=4t-6wJMoDbs">Youtube</a>:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4t-6wJMoDbs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe src="//player.bilibili.com/player.html?aid=676733603&bvid=BV1fU4y1M7hs&cid=443598274&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p>This project implemented a fully functional game action and AI system to demonstrate a “Souls-like” action gameplay, the action system design, AI system design, demo level map building, UI design and sound effect design are all independently designed and implemented by the author. The only third party resources in this project are artistic assets including character skeleton models, megascan assets and animation segments which came from Unreal marketplace. The core innovations and highlights of this demo include: </p>
+<ol>
+<li><p>Adaptive Animation Blending Implementation: Through programming implementation of animation blueprint in Unreal engine, a smooth character animation transition was realized, and gradual animation mixing and conversion between different operation inputs of the player was achieved to avoid character twitching and sudden posture changes. </p>
+</li>
+<li><p>Diversified Full-body Movement and Subtle Movement Design: To make the player controlling more responsive and diversified, all common character movements in main stream action games were implemented including walking, sprinting, jumping, double jumping, dashing and dodging. Additional subtle movements were also implemented to make the character movement more vivid including auto character orientation syncing with player view angle, auto lean gesture adjustment according to game map terrain.</p>
+</li>
+<li><p>Attacking Combo Design: Combo design has been implemented to the normal attacking system of the character, continuous attack input will trigger different combo animations, while scattered attack input will only trigger the same initial attack animation. Once the combo is triggered, the character will decelerate until the attack animation is completed. This also brings diversity to the game difficulty as mindless attacks will make the character more likely to be hit by the enemy’s counterattack. </p>
+</li>
+<li><p>Diversified Player Skill Design: Three kind of skills were implemented with different characteristics, all with casting time and disruption judging to ensure that mindless casting of skills will definitely be interrupted by AI, thus force the players to make decisions more wisely. Once casting stage finished, the enemy damage cannot interrupt the skill casting anymore. Details as below : (1) Boosting Strike: With medium casting time, the character will dashing forward and swing her weapons for 3 rounds to cause massive damage. Sound effect, emitter effect and camera shake are also implemented to enhance the powerful feelings of this skill. (2) Air Strike: Conditional skill that can only be cast when the character is in air, a backward roll in the air will increase the height of the character then an oblique dive will cause three times of damage. (3) Infallible Teleport Ultimate Skill: The most powerful skill with a very long casting time, the character will teleport for 5 times to attack the enemy from 5 directions, once the skill finished its casting stage, it cannot be interrupted and is 100% inevitable. The disadvantage for this skill is its casting time, the only condition of successfully casting this skill is to dodge away from the enemy when it raises its weapon to attack and immediately start the skill casting, otherwise this skill will be interrupted by the enemy. </p>
+</li>
+<li><p>Defence and Perfect Defence Counterattack: If the character is under defence status, the player can not move and the enemy will not cause damage to the player. Once the defence button is pressed, there is a 0.2 second delay to get into the defence status so that the player need to observe the enemy’s behaviour carefully and press the defence button in advance to make a successful defence. If the player is hit by the enemy at the first 0.2 second after getting into defence status, a counterattack will be triggered to fight back to the enemy as a perfect timing defence bonus. </p>
+</li>
+<li><p>AI Behaviour system: A fully functional AI system is implemented to control the enemy in the game demo, it consists of three sub modules: </p>
+</li>
+</ol>
+<ul>
+<li><p>(1) Auto Player Detection: The AI will periodically scan around to check if player gets into its attack zone, if no player detected, it will start auto patrol. </p>
+</li>
+<li><p>(2) Auto Patrol: The AI will calculate a random reachable position around its current position and move to the target position. </p>
+</li>
+<li><p>(3) Auto Attacking: Once player detected by the AI, it will start to chase the player and attack her until the player is dead or itself gets killed. </p>
+</li>
+</ul>
+<ol start="7">
+<li><p>AI Attacking system: The attacking system of the AI includes 4 normal combo. Normal attack are randomly triggered and they have different lengths of attack start moves. Some are instant attacks that can hardly be evaded while others has longer animation before actually causing damage. This increases the uncertainty of the enemy attacking pattern so every approach to the enemy will lead to potential unevadable damage, the player need to carefully attack the enemy and evade in time. </p>
+</li>
+<li><p>AI Skill System: The AI only has one skill, but the skill is a powerful teleport attack that will bring the enemy to where the player stands to attack for 3 times. Players need to carefully observe when that enemy teleport and dodging away before the enemy hit.</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/11/tlou2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -783,74 +883,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/22/fantasy/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar_2.jpg">
-      <meta itemprop="name" content="Junyue Liu">
-      <meta itemprop="description" content="Former Technical Designer @ Perfect World Beijing, Former Performance Engineer @ NVIDIA Shanghai, Msc Design & Digital Media from Uni. of Edinburgh, B.Eng.CST from USTC">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Roger's Gaming Cabin">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/22/fantasy/" class="post-title-link" itemprop="url">Hovering Stones On The Sea - An Unreal Map Design</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-10-22 15:02:48" itemprop="dateCreated datePublished" datetime="2021-10-22T15:02:48+01:00">2021-10-22</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Level-and-Environment/" itemprop="url" rel="index"><span itemprop="name">Level and Environment</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>The hovering giant stone islands I saw in the movie Avatar really impressed me.<br>Tried to build some virtual enviroment to restore the scene, but it’s difficult than I thought especially how to make a suitable atmosphere for photographing.<br>I will definitely try to improve this after I got more knowledge about the unreal engine.</p>
-<h3 id="See-the-screenshots-below"><a href="#See-the-screenshots-below" class="headerlink" title="See the screenshots below:"></a>See the screenshots below:</h3><p><img src="/images/small/f1.png" alt="1" title="Hovering Stones"><br><img src="/images/small/f2.png" alt="1" title="Hovering Stones"><br><img src="/images/small/f3.png" alt="1" title="Hovering Stones"><br><img src="/images/small/f4.png" alt="1" title="Hovering Stones"><br><img src="/images/small/f5.png" alt="1" title="Hovering Stones"><br><img src="/images/small/f6.png" alt="1" title="Hovering Stones"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -921,7 +953,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
