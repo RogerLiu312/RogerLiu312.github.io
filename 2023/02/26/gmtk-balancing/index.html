@@ -22,23 +22,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="对地平线角色基础移动系统的表现细节拆解，转向衔接动画细致到45度转向都有分支动画，非motion matching方式实现的纯动画状态机动作系统也能如此顺畅…… 人物基础移动系统细节 战斗系统">
+  <meta name="description" content="About design problem solving and balancing the game mechanics, some real handy tips from great devs can be found in GMTK recent videos:  Indetify the core of the problem instead of reckless fixes. Fas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="地平线黎明曙光角色基础移动系统和战斗系统拆解">
-<meta property="og:url" content="http://example.com/2022/12/26/horizon/index.html">
+<meta property="og:title" content="GMTK Balancing Advices from Various Devs">
+<meta property="og:url" content="http://example.com/2023/02/26/gmtk-balancing/index.html">
 <meta property="og:site_name" content="Roger&#39;s Gaming Cabin">
-<meta property="og:description" content="对地平线角色基础移动系统的表现细节拆解，转向衔接动画细致到45度转向都有分支动画，非motion matching方式实现的纯动画状态机动作系统也能如此顺畅…… 人物基础移动系统细节 战斗系统">
+<meta property="og:description" content="About design problem solving and balancing the game mechanics, some real handy tips from great devs can be found in GMTK recent videos:  Indetify the core of the problem instead of reckless fixes. Fas">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/small/smaller/png/Horizon.png">
-<meta property="og:image" content="http://example.com/images/small/smaller/png/Horizon_combat.png">
-<meta property="article:published_time" content="2022-12-26T14:41:33.000Z">
-<meta property="article:modified_time" content="2023-02-25T17:37:20.683Z">
+<meta property="article:published_time" content="2023-02-26T19:23:12.000Z">
+<meta property="article:modified_time" content="2023-02-26T19:53:01.679Z">
 <meta property="article:author" content="Junyue Liu">
-<meta property="article:tag" content="Horizon Zero Dawn">
+<meta property="article:tag" content="Dev Tips">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/small/smaller/png/Horizon.png">
 
-<link rel="canonical" href="http://example.com/2022/12/26/horizon/">
+<link rel="canonical" href="http://example.com/2023/02/26/gmtk-balancing/">
 
 
 <script id="page-configurations">
@@ -51,7 +48,7 @@
   };
 </script>
 
-  <title>地平线黎明曙光角色基础移动系统和战斗系统拆解 | Roger's Gaming Cabin</title>
+  <title>GMTK Balancing Advices from Various Devs | Roger's Gaming Cabin</title>
   
 
 
@@ -167,7 +164,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/26/horizon/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/26/gmtk-balancing/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar_2.jpg">
@@ -180,7 +177,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          地平线黎明曙光角色基础移动系统和战斗系统拆解
+          GMTK Balancing Advices from Various Devs
         </h1>
 
         <div class="post-meta">
@@ -190,7 +187,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-12-26 14:41:33" itemprop="dateCreated datePublished" datetime="2022-12-26T14:41:33+00:00">2022-12-26</time>
+              <time title="Created: 2023-02-26 19:23:12" itemprop="dateCreated datePublished" datetime="2023-02-26T19:23:12+00:00">2023-02-26</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -198,7 +195,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Gameplay-Analysis/" itemprop="url" rel="index"><span itemprop="name">Gameplay Analysis</span></a>
+                  <a href="/categories/Tips-and-Advices-from-Good-Devs/" itemprop="url" rel="index"><span itemprop="name">Tips and Advices from Good Devs</span></a>
                 </span>
             </span>
 
@@ -213,9 +210,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>对地平线角色基础移动系统的表现细节拆解，转向衔接动画细致到45度转向都有分支动画，非motion matching方式实现的纯动画状态机动作系统也能如此顺畅……</p>
-<h3 id="人物基础移动系统细节"><a href="#人物基础移动系统细节" class="headerlink" title="人物基础移动系统细节"></a>人物基础移动系统细节</h3><p><img src="/images/small/smaller/png/Horizon.png" alt="Moving" title="Moving"></p>
-<h3 id="战斗系统"><a href="#战斗系统" class="headerlink" title="战斗系统"></a>战斗系统</h3><p><img src="/images/small/smaller/png/Horizon_combat.png" alt="Moving" title="Moving"></p>
+        <p>About design problem solving and balancing the game mechanics, some real handy tips from great devs can be found in <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=rJZyPdYIbZI">GMTK recent videos</a>:</p>
+<ol>
+<li>Indetify the core of the problem instead of reckless fixes.</li>
+<li>Fast iterate between possible solutions and compare for the best.</li>
+<li>De-construct and list all the possible alternitive parameters, determine which of them cannot be adjusted otherwise the mechanism/characteristc will break, and which of them can be tuned. However, the root cause might actually be the ones you think cannot change, at such time, kill your darling!</li>
+<li>Make big changes. Double it or cut it half will give you more intuitive feeling about if that change is leading the design to the right fix.</li>
+<li>Reverse between punish or reward. If a punishing mechanism didn’t work so well, try make it into a rewarding way with flipped logic.</li>
+<li>Solve it elsewhere. If something is too tricky to solve in a system, try solve it in another system. See examples of UI design and pace fixing of TLOU 1.</li>
+<li>Study player behaviour. Compare in detail how different types of players play the game and find the difference, use it to adjust the design.</li>
+<li>Consider the big picture. Any adjustment to the game might bring unexpected effect to entwisted systems in game, test the change before go live.  </li>
+<li>Mind the resource needed. Balancing adjustment should be made in simplest way and with fewest resources, otherwise the schedule will break. </li>
+<li>Test! Test! Test! Don’t tell the play-tester how you fix the problem, just see the natural outcome of the fix to confirm if it’s right.</li>
+<li><h3 id="Learn-from-Nintendo-Daddy"><a href="#Learn-from-Nintendo-Daddy" class="headerlink" title="Learn from Nintendo (Daddy)."></a>Learn from Nintendo (Daddy).</h3></li>
+</ol>
 
     </div>
 
@@ -225,7 +233,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Horizon-Zero-Dawn/" rel="tag"># Horizon Zero Dawn</a>
+              <a href="/tags/Dev-Tips/" rel="tag"># Dev Tips</a>
           </div>
 
         
@@ -234,12 +242,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/12/24/Thusima/" rel="prev" title="GDC对马岛之鬼战斗设计分享的个人总结 / Summary for GDC Ghost of Tsushima Combat Design">
-      <i class="fa fa-chevron-left"></i> GDC对马岛之鬼战斗设计分享的个人总结 / Summary for GDC Ghost of Tsushima Combat Design
+    <a href="/2023/02/19/sh-combat/" rel="prev" title="战斗系统玩法切片验证 / Combat System Gameplay Slice Verification">
+      <i class="fa fa-chevron-left"></i> 战斗系统玩法切片验证 / Combat System Gameplay Slice Verification
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/12/31/fps/" rel="next" title="The Raider - A Fully Playable PVE FPS Demo">
-      The Raider - A Fully Playable PVE FPS Demo <i class="fa fa-chevron-right"></i>
+    <a href="/2077/12/21/landing-page/" rel="next" title="欢迎来到我的个人网站 - Welcome To My Personal Site">
+      欢迎来到我的个人网站 - Welcome To My Personal Site <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -299,7 +307,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%BA%E7%89%A9%E5%9F%BA%E7%A1%80%E7%A7%BB%E5%8A%A8%E7%B3%BB%E7%BB%9F%E7%BB%86%E8%8A%82"><span class="nav-number">1.</span> <span class="nav-text">人物基础移动系统细节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%98%E6%96%97%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.</span> <span class="nav-text">战斗系统</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Learn-from-Nintendo-Daddy"><span class="nav-number">1.</span> <span class="nav-text">Learn from Nintendo (Daddy).</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
