@@ -22,20 +22,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Finally the summary of design process of the HOM project is finished, sharing it here with major design ideas. So glad to see that the system worked so good on capturing the game pupularity in China e">
+  <meta name="description" content="48小时Jam了一个井字棋玩法延伸而成的战棋（类自走棋？）游戏，复习了一下蓝图的Dispacher和Minimax递归算法，但不得不说用蓝图写递归真的是个体力活儿，另外，帕拉贡素材真的是UE快速原型之神！ 下附演示视频，可前往B站或Youtube查看：       一些原型实现过程中的技术点和设计点：  Minimax递归方式实现至少不败的AI，选择困难难度则每次决策均为递归决策，否则将有概率随机">
 <meta property="og:type" content="article">
-<meta property="og:title" content="The design process of HOM APAC - Decision aid system for game popularity prediction">
-<meta property="og:url" content="http://example.com/2021/10/02/hom-design/index.html">
+<meta property="og:title" content="48小时Jam一个井字战棋游戏！- 48h Game Jam for a Tic-Tac-Toe PLUS Chess Game!">
+<meta property="og:url" content="http://example.com/2023/03/02/ttt/index.html">
 <meta property="og:site_name" content="Roger&#39;s Gaming Cabin">
-<meta property="og:description" content="Finally the summary of design process of the HOM project is finished, sharing it here with major design ideas. So glad to see that the system worked so good on capturing the game pupularity in China e">
+<meta property="og:description" content="48小时Jam了一个井字棋玩法延伸而成的战棋（类自走棋？）游戏，复习了一下蓝图的Dispacher和Minimax递归算法，但不得不说用蓝图写递归真的是个体力活儿，另外，帕拉贡素材真的是UE快速原型之神！ 下附演示视频，可前往B站或Youtube查看：       一些原型实现过程中的技术点和设计点：  Minimax递归方式实现至少不败的AI，选择困难难度则每次决策均为递归决策，否则将有概率随机">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-10-02T18:11:07.000Z">
-<meta property="article:modified_time" content="2023-02-17T17:07:29.587Z">
+<meta property="article:published_time" content="2023-03-02T21:30:47.000Z">
+<meta property="article:modified_time" content="2023-03-02T22:17:30.157Z">
 <meta property="article:author" content="Junyue Liu">
-<meta property="article:tag" content="Game Popularity Prediction">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/10/02/hom-design/">
+<link rel="canonical" href="http://example.com/2023/03/02/ttt/">
 
 
 <script id="page-configurations">
@@ -48,7 +47,7 @@
   };
 </script>
 
-  <title>The design process of HOM APAC - Decision aid system for game popularity prediction | Roger's Gaming Cabin</title>
+  <title>48小时Jam一个井字战棋游戏！- 48h Game Jam for a Tic-Tac-Toe PLUS Chess Game! | Roger's Gaming Cabin</title>
   
 
 
@@ -164,7 +163,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/02/hom-design/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/02/ttt/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar_2.jpg">
@@ -177,7 +176,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          The design process of HOM APAC - Decision aid system for game popularity prediction
+          48小时Jam一个井字战棋游戏！- 48h Game Jam for a Tic-Tac-Toe PLUS Chess Game!
         </h1>
 
         <div class="post-meta">
@@ -187,16 +186,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-10-02 19:11:07" itemprop="dateCreated datePublished" datetime="2021-10-02T19:11:07+01:00">2021-10-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Other-Personal-Projects/" itemprop="url" rel="index"><span itemprop="name">Other Personal Projects</span></a>
-                </span>
+              <time title="Created: 2023-03-02 21:30:47" itemprop="dateCreated datePublished" datetime="2023-03-02T21:30:47+00:00">2023-03-02</time>
             </span>
 
           
@@ -210,9 +200,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Finally the summary of design process of the HOM project is finished, sharing it here with major design ideas. So glad to see that the system worked so good on capturing the game pupularity in China <del>especially in capturing little butter game from Xiashuo</del> . The feedback from Moscow team and marketing team are inspiring, hope Ian could report this well in the QBR Haha <span class="github-emoji" alias="joy" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8">&#x1f602;</span>…</p>
-<p>Note: If your browser supports embedded PDFs natively like Chrome, the PDF file will be directly displayed in below widgets. If you cannot see below content, please check the original PDF file from <a target="_blank" rel="noopener" href="https://github.com/RogerLiu312/RogerLiu312.github.io/blob/master/download_able/HOM.pdf" title="Design doc for HOM">here</a>.</p>
-<div class="pdfobject-container" data-target="/download_able/HOM.pdf" data-height="540px"></div>
+        <p>48小时Jam了一个井字棋玩法延伸而成的战棋（类自走棋？）游戏，复习了一下蓝图的Dispacher和Minimax递归算法，但不得不说用蓝图写递归真的是个体力活儿，另外，帕拉贡素材真的是UE快速原型之神！</p>
+<p>下附演示视频，可前往<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1fY4y117BL/">B站</a>或<a target="_blank" rel="noopener" href="https://www.youtube.com/embed/LyfEOinJCI8">Youtube</a>查看：</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LyfEOinJCI8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe src="//player.bilibili.com/player.html?bvid=BV1fY4y117BL&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+
+
+<p>一些原型实现过程中的技术点和设计点：</p>
+<ol>
+<li>Minimax递归方式实现至少不败的AI，选择困难难度则每次决策均为递归决策，否则将有概率随机选择落子位置，难度越低AI随机选择落子的概率越高。本质上是个决策搜索树，但是在8层深度的搜索时由于要搜索的叶子结点太多，会<strong>碰到蓝图循环数量超限，需要在项目设置里把循环数量拉高一个数量级</strong>，但是即使如此由于长循环持续运行会短时间内吃掉几乎所有的CPU资源（大概这个原因？），会导致帧渲染更新的卡顿，正式项目里最好还是剪枝优化一下决策树减少循环数量，或者<strong>单开一个线程做异步loop，主线程异步获取树搜索结果来实现不影响正常画面渲染，有空可以研究一下，蓝图不知道有没有类似的模块，或者思路不对？</strong>。</li>
+<li>规则拓展：在常规井字棋玩法无人胜出和棋后，将转为自动战斗的战棋模式，后手方由于棋子数量较少，因此将获得战力增益，棋子互相毗邻得越多，则获得的增益越高。</li>
+<li>在必然和棋的未完局面下，决策方向将从达成三连转变为尽量使己方棋子抱团，以获得更多战力提升，增加决策空间。</li>
+<li>双方棋子自动战斗，所有棋子被消灭的一方落败；增益参数经过测试调整后，基本可以实现在后手方有意放弃三连，专注于棋子抱团情况下，能够获得更高的获胜概率。但是如果是正式项目中，肯定要自动化测试一下调一下增益计算公式和参数。</li>
+<li>棋盘格在鼠标选择时及三连成功时自动高亮，通过在post-processing volume actor中添加post-processing material并动态修改棋盘格render custom depth实现。<strong>这个方法几乎可以用在所有物体描边类用户提示上，而且可复用实现起来特别快，不知道会不会有额外性能损耗，后续可以研究下。</strong></li>
+<li>原型过程中用到的两个棋子O_Chess和X_Chess的逻辑大体一致，按理来说应该用类派生写比较合理，但是由于早期做原型时玩法和actor类形式都还没确定，没有考虑太多所以在Jam的过程中还是写成了两个独立的Actor类，结果就是类似代码两边复制写，还得微调一下参数，非常浪费时间而且容易出错。<strong>但是反过来，这或许反而可以成为正式项目迭代当中的优势，TD一马当先推进玩法验证的原型，求快求功能实现，然后反过来可以给正式实现提供麻烦规避和优化的思路和经验，算是个很好的例子。</strong></li>
+</ol>
 
     </div>
 
@@ -221,9 +224,6 @@
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/Game-Popularity-Prediction/" rel="tag"># Game Popularity Prediction</a>
-          </div>
 
         
 
@@ -231,12 +231,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/10/01/ES-visual/" rel="prev" title="Kibana Visualization for Gaming User Feedback">
-      <i class="fa fa-chevron-left"></i> Kibana Visualization for Gaming User Feedback
+    <a href="/2023/02/26/gmtk-balancing/" rel="prev" title="GMTK Balancing Advices from Various Devs">
+      <i class="fa fa-chevron-left"></i> GMTK Balancing Advices from Various Devs
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/10/16/research-proposal/" rel="next" title="A Research Proposal towards Games User Research">
-      A Research Proposal towards Games User Research <i class="fa fa-chevron-right"></i>
+    <a href="/2077/12/21/landing-page/" rel="next" title="欢迎来到我的个人网站 - Welcome To My Personal Site">
+      欢迎来到我的个人网站 - Welcome To My Personal Site <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
